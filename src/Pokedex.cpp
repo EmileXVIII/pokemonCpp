@@ -4,7 +4,7 @@
 
 Pokedex::Pokedex()
 {
-    Pokemon* poke = new Pokemon[5];
+    Pokemon* poke = new Pokemon[1000];
     (*this).setpokemonDeck( poke );
 }
 

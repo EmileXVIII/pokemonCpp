@@ -1,29 +1,27 @@
 #ifndef DEF_POKEDEX
-#define DEF_POKEDEX
+    #define DEF_POKEDEX
 
-#include <iostream>
-#include <string>
+    #include <iostream>
 
-#include "../include/Pokemon.h"
+    #include "../include/Pokemon.h"
 
-using namespace std;
+    using namespace std;
 
-class Pokedex
-{
-    private:
+    class Pokedex
+    {
+        private:
 
-        Pokemon* pokemonDeck[1000];
-    
-    public:
+            Pokemon* pokemonDeck[1000];
+        
+        public:
 
-	    Pokedex();
-        ~Pokedex();
+            Pokedex();
+            ~Pokedex();
 
-        // getters & setters
+            // getters & setters
 
-        Pokemon* getpokemonDeck();
-        void setpokemonDeck(Pokemon* pokemonDeck);
+            Pokemon* getpokemonDeck();
+            void setpokemonDeck(Pokemon* pokemonDeck);
 
-};
-
+    };
 #endif

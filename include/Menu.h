@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "../include/Pokedex.h"
+
 using namespace std;
 
 class Menu
@@ -11,7 +13,8 @@ class Menu
     private:
 
         string trainer;
-    
+        Pokedex pokedex;
+
     public:
 
 	    Menu();
@@ -23,6 +26,7 @@ class Menu
 
         void displayMenu();
         void createTrainer();
+        void createPokedex();
 
         void displayPokemonList();
         void managePokemon();
@@ -33,6 +37,9 @@ class Menu
 
         string getTrainer();
         void setTrainer(string trainer);
+
+        Pokedex getPokedex();
+        void setPokedex(Pokedex pokedex);
 
 };
 

@@ -49,4 +49,3 @@
     };
 
 #endif // DS_POKE_POKEMON
-

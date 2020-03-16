@@ -24,11 +24,11 @@ class Combat{
         void setPokemonWild(Pokemon* pokemonWild1);
 
         void toString();
-
+        void displayCombatMenu();
         void swapPokemon();
         void throwPokeball();
-        void Attack();
-        void RunAway();
+        void attack();
+        void runAway();
 };
 
 #endif //!DS_POKE_COMBAT

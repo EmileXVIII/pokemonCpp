@@ -2,6 +2,7 @@
 #include "Pokemon.h"
 #include "Combat.h"
 #include "Attack.h"
+#include "Trainer.h"
 #include <string>
 #include <stdlib.h>     /* srand, rand */
 

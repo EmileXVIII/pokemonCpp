@@ -21,7 +21,7 @@ class Combat{
         Pokemon* getPokemonTrainer();
         Pokemon* getPokemonWild();
 
-        void setTrainer(Trainer* pTrainer);
+        void setTrainer(Trainer* trainer);
         void setPokemonTrainer(Pokemon* pokemonTrainer1);
         void setPokemonWild(Pokemon* pokemonWild1);
 

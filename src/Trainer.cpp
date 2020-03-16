@@ -28,8 +28,8 @@ void Trainer::init(){
     pokemonList = vector<Pokemon*>();
     
     // add pokemons for test:
-    Pokemon* test1 =new Pokemon("test1");
-    Pokemon* test2 =new Pokemon("test2");
+    Pokemon* test1 = new Pokemon("test1");
+    Pokemon* test2 = new Pokemon("test2");
     (*this).addPokemon(test1);
     (*this).addPokemon(test2); 
     std::cout << (*(*this).getpokemonList()[0]).getName() << std::endl;

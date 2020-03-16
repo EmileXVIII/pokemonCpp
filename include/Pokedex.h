@@ -2,7 +2,7 @@
     #define DEF_POKEDEX
 
     #include <iostream>
-    #include <vector>
+
     #include "../include/Pokemon.h"
 
     using namespace std;
@@ -11,7 +11,7 @@
     {
         private:
 
-            vector<Pokemon*> pokemonDeck;
+            Pokemon* pokemonDeck[1000];
         
         public:
 
@@ -20,8 +20,8 @@
 
             // getters & setters
 
-            vector<Pokemon*> getpokemonDeck();
-            void setpokemonDeck(vector<Pokemon*> pokemonDeck);
+            Pokemon* getpokemonDeck();
+            void setpokemonDeck(Pokemon* pokemonDeck);
 
     };
 #endif

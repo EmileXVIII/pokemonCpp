@@ -15,6 +15,21 @@ Pokemon::Pokemon():xp(0),hpMax(100),hp(100),level(1),type("normal"),name("defaul
     listAttacks=newListAttack;
 }
 
+void Pokemon::setListAttack(Attack* attack){
+    
+    int i = 0;
+
+    while(i < 4 && listAttacks[i]==0){
+        ++i;
+    };
+
+    // secure
+    if(i>=4) i = 0;
+    
+    listAttacks[i] = attack;
+    
+};
+
 Attack** Pokemon::getListAttack() const{
     Attack* newListAttack[4] ;
     for (size_t i = 0; i < 4; i++)

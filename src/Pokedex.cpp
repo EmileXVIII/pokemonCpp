@@ -4,16 +4,16 @@
 
 Pokedex::Pokedex()
 {
-    vector<Pokemon*> poke = vector<Pokemon*>();
+    Pokemon* poke = new Pokemon[1000];
     (*this).setpokemonDeck( poke );
 }
 
-vector<Pokemon*> Pokedex::getpokemonDeck(){
-    return pokemonDeck;
+Pokemon* Pokedex::getpokemonDeck(){
+    return* pokemonDeck;
 };
 
-void Pokedex::setpokemonDeck(vector<Pokemon*> _pdeck){
-    pokemonDeck = _pdeck;
+void Pokedex::setpokemonDeck(Pokemon* _pdeck){
+    *pokemonDeck = _pdeck;
 }
 
 Pokedex::~Pokedex()

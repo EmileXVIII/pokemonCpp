@@ -42,6 +42,7 @@
         uint getXp() const;
         uint getLevel() const;
         Attack** getListAttack() const;
+        void setListAttack(Attack* attack);
         void setName(std::string name);
         void setHp(int hp);
         void setHpMax(int hp);

@@ -37,7 +37,7 @@ void Menu::createTrainer(){
 
 }
 void Menu::createPokedex(){
-    pokedex.setpokemonDeck(vector<Pokemon*>()); 
+    pokedex.setpokemonDeck(new Pokemon[1000]); 
 }
 
 void Menu::displayMenu(){
@@ -118,7 +118,7 @@ Trainer Menu::getTrainer(){
 };
 void Menu::setTrainer(Trainer _trainer){
     trainer = _trainer;
-}
+};
 
 // ++
 // Pokedex Menu::getPokedex(){

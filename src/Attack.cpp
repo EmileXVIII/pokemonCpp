@@ -1,6 +1,4 @@
-#include <iostream>
 #include "Attack.h"
-#include <string>
 
 using namespace std;
 
@@ -14,7 +12,15 @@ Attack::Attack(string pName,string pType, int pDamage){
 
 Attack::~Attack(){}
 
-void Attack::toString(){
+AttackStruct Attack::toStruct(){
+    return AttackStruct(name,type,damage);
+}
+std::string Attack::toString(){
+    AttackStruct pokemonStruct = (*this).toStruct();
+    return x2struct::X::tojson(pokemonStruct);
+}
+
+void Attack::log(){
     cout <<"Attaque : "<< name <<", qui est de type : "<< type <<", et qui inflige :"<< damage << " de degats" << endl;
 }
 

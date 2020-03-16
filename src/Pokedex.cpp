@@ -1,4 +1,4 @@
-#include "../include/pokedex.h"
+#include "../include/Pokedex.h"
 
 #include "../include/Pokemon.h"
 

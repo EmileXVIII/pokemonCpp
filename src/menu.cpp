@@ -11,6 +11,7 @@ using namespace std;
 Menu::Menu() {
 
     Menu::createTrainer();
+    Menu::createPokedex();
     Menu::displayMenu();
 
 }
@@ -27,16 +28,21 @@ void Menu::createTrainer(){
 
     (*this).setTrainer(trainer);  
 
+    cin.ignore();
+
+}
+void Menu::createPokedex(){
+    (*this).pokedex.setpokemonDeck(new Pokemon[1000]); 
 }
 
 void Menu::displayMenu(){
-
     cout << "\n";
     cout << " -=--=--=--=- MENU -=--=--=--=-" << "\n";
     cout << " (1) . View Your Pokemon List " << "\n";
     cout << " (2) . Manage Your Pokemons " << "\n";
     cout << " (3) . Shearch A Combat " << "\n";
     cout << " (4) . Heal Your Pokemons " << "\n";
+    cout << " (0) . Exit " << "\n";
     cout << " -=--=--=--=--=--=--=--=--=--=-" << "\n";
 
     int choice;
@@ -58,15 +64,24 @@ void Menu::displayMenu(){
         if(choice == 4)
             healPokemons();    
 
-    }else{
-        cout << "\n Please select a number in the list. \n";
+        cin.ignore();
+        Menu::displayMenu();
+
     }
 
-    Menu::displayMenu();
+    cin.ignore();
 
 }
    
 void Menu::displayPokemonList(){
+
+    cout << "\n";
+    cout << " - -- -- - POKEMON LIST - -- -- -" << "\n";
+    
+    string pokemonName = "Pokemon Name";
+    cout << " > " << pokemonName << "\n";
+
+    cout << " - -- -- -- -- -- -- -- -- -- -" << "\n";
 
 }
 void Menu::managePokemon(){
@@ -77,6 +92,15 @@ void Menu::searchCombat(){
 }
 void Menu::healPokemons(){
     
+    cout << "\n";
+    cout << " - -- -- - POKEMON LIST - -- -- -" << "\n";
+    
+    string pokemonName = "Pokemon Name";
+    int num = 1;
+    cout << " ("<< num <<") > " << pokemonName << "\n";
+
+    cout << " - -- -- -- -- -- -- -- -- -- -" << "\n";
+    
 }
  
 // getters & setters
@@ -86,6 +110,14 @@ string Menu::getTrainer(){
 };
 void Menu::setTrainer(string _trainer){
     trainer = _trainer;
+}
+
+// ++
+Pokedex Menu::getPokedex(){
+    return pokedex;
+};
+void Menu::setPokedex(Pokedex _pokedex){
+    pokedex = _pokedex;
 }
 
 Menu::~Menu() {}

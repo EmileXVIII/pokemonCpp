@@ -7,7 +7,10 @@ Pokemon::Pokemon(std::string name):xp(0),hpMax(100),hp(100),level(1),type("norma
 {
     (*this).setName(name);
 }
-Pokemon::Pokemon():xp(0),hpMax(100),hp(100),level(1),type("normal"),name("default"){}
+Pokemon::Pokemon()
+{
+    (*this).setName("default");
+}
 
 Pokemon::~Pokemon()
 {

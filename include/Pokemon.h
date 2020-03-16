@@ -1,13 +1,12 @@
-#if defined(__WIN32__)
-#ifndef WINDOWS
-#define WINDOWS
-#endif
-#endif 
+
 #if !defined(DS_POKE_POKEMON)
+#define WINDOWS
 #define DS_POKE_POKEMON
 #include <iostream>
 #include "../lib/x2struct-master/x2struct.hpp"
-typedef unsigned int uint;
+
+typedef unsigned int uint ;
+
 struct PokemonStruct {
     std::string name;
     int hp;
@@ -18,6 +17,7 @@ struct PokemonStruct {
     PokemonStruct(std::string name,int hp,int hpMax,std::string type,uint xp,uint level):name(name),hp(hp),hpMax(hpMax),type(type),xp(xp),level(level){};
     XTOSTRUCT(O(name,hp,hpMax,type,xp,level));
 };
+
 class Pokemon
 {
 private:
@@ -28,8 +28,8 @@ private:
     uint xp;
     uint level;
 public:
-    Pokemon(std::string name);
     Pokemon();
+    Pokemon(std::string name);
     ~Pokemon();
     std::string getName() const;
     int getHp() const;
@@ -48,4 +48,3 @@ public:
 };
 
 #endif // DS_POKE_POKEMON
-

@@ -5,8 +5,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
-	Menu *menu;
-    menu = new Menu();
+	Menu();
 
-	cin; // pause
+	cout << "\n Bye !";
 }

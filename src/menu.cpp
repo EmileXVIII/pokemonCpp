@@ -1,6 +1,6 @@
 
 #include "../include/Menu.h"
-
+#include "../include/pokedex.h"
 #include <iostream>
 #include <string>
 
@@ -113,11 +113,11 @@ void Menu::setTrainer(string _trainer){
 }
 
 // ++
-Pokedex Menu::getPokedex(){
-    return pokedex;
-};
-void Menu::setPokedex(Pokedex _pokedex){
-    pokedex = _pokedex;
-}
+// Pokedex Menu::getPokedex(){
+//     return pokedex;
+// };
+// void Menu::setPokedex(Pokedex _pokedex){
+//     pokedex = _pokedex;
+// }
 
 Menu::~Menu() {}

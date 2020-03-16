@@ -3,6 +3,7 @@
 #include "Combat.h"
 #include "Attack.h"
 #include <string>
+#include <stdlib.h>     /* srand, rand */
 
 using namespace std;
 
@@ -21,7 +22,7 @@ Combat::~Combat(){
 }
 
 void Combat::toString(){
-    cout << "Attention, un "<<pokemonWild->getName() <<" apparait !";
+    cout << "Attention, un "<<pokemonWild->getName() <<" sauvage apparait !";
     cout << "\n";
     cout << "Trainer : " << trainer << " envoie au combat "<<  pokemonTrainer->getName();;
     cout << "\n";
@@ -77,7 +78,9 @@ void Combat::displayCombatMenu() {
         if(choice == 3)
             throwPokeball();
         if(choice == 4)
-            runAway();    
+            runAway();
+
+        Combat::displayCombatMenu();    
 
     }else{
         cout << "\n Please select a number in the list. \n";
@@ -90,7 +93,19 @@ void Combat::swapPokemon(){
 }
 
 void Combat::throwPokeball(){
-    
+
+    int roll;
+    /* initialize random seed: */
+    srand (time(NULL));
+
+    /* generate secret number between 1 and 10: */
+    roll = rand() % 100 + 1;
+
+    if (roll >= 30) {
+        cout << "\n You catch " << pokemonWild->getName() << "\n";
+    } else {
+        cout << "\n Damn ! " << pokemonWild->getName() << " escaped !" <<"\n";        
+    }
 }
 
 

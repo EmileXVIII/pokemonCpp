@@ -1,6 +1,7 @@
 
 #include "../include/Menu.h"
 #include "../include/pokedex.h"
+#include "../include/Combat.h"
 #include <iostream>
 #include <string>
 
@@ -40,7 +41,7 @@ void Menu::displayMenu(){
     cout << " -=--=--=--=- MENU -=--=--=--=-" << "\n";
     cout << " (1) . View Your Pokemon List " << "\n";
     cout << " (2) . Manage Your Pokemons " << "\n";
-    cout << " (3) . Shearch A Combat " << "\n";
+    cout << " (3) . Search A Combat " << "\n";
     cout << " (4) . Heal Your Pokemons " << "\n";
     cout << " (0) . Exit " << "\n";
     cout << " -=--=--=--=--=--=--=--=--=--=-" << "\n";
@@ -88,7 +89,7 @@ void Menu::managePokemon(){
 
 }
 void Menu::searchCombat(){
-
+    Combat *combat = new Combat();
 }
 void Menu::healPokemons(){
     

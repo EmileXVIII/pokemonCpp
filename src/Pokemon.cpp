@@ -12,7 +12,36 @@ Pokemon::Pokemon()
     (*this).setName("default");
 }
 
+<<<<<<< Updated upstream
 Pokemon::~Pokemon(){}
+=======
+void Pokemon::setListAttack(Attack* attack){
+    
+    int i = 0;
+
+    while(i < 4 && listAttacks[i]==0){
+        ++i;
+    };
+
+    // secure
+    if(i>=4) i = 0;
+    
+    listAttacks[i] = attack;
+    
+};
+
+Attack** Pokemon::getListAttack() const{
+    Attack* newListAttack[4] ;
+    for (size_t i = 0; i < 4; i++)
+    {
+        *(newListAttack[i])=*(listAttacks[i]);
+    }
+    return newListAttack;
+}
+
+Pokemon::~Pokemon(){
+}
+>>>>>>> Stashed changes
 
 std::string Pokemon::getName() const{
     return name;

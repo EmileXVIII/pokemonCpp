@@ -115,7 +115,7 @@ Trainer Menu::getTrainer(){
 };
 void Menu::setTrainer(Trainer _trainer){
     trainer = _trainer;
-}
+};
 
 // ++
 Pokedex Menu::getPokedex(){

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <vector>
 #include "../include/Pokedex.h"
 #include "../include/Trainer.h"
 

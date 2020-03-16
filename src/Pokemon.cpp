@@ -1,6 +1,6 @@
 
 #include "../include/Pokemon.h"
-Pokemon::Pokemon(std::string name):xp(0),hpMax(100),hp(100),type("normal")
+Pokemon::Pokemon(std::string name):xp(0),hpMax(100),hp(100),level(1),type("normal")
 {
     (*this).setName(name);
 }
@@ -44,3 +44,10 @@ void Pokemon::setXp(uint pXp){
 void Pokemon::setLevel(uint pLevel){
     level=pLevel;
 };
+PokemonStruct Pokemon::toStruct() const{
+    return PokemonStruct(name,hp,hpMax,type,xp,level);
+}
+std::string Pokemon::toString() const {
+    PokemonStruct pokemonStruct = (*this).toStruct();
+    return x2struct::X::tojson(pokemonStruct);
+}

@@ -1,7 +1,10 @@
 
 #include "../include/Menu.h"
+#include "../include/Pokemon.h"
 #include "../include/Pokedex.h"
 #include "../include/Combat.h"
+#include "../include/Trainer.h"
+
 #include <iostream>
 #include <string>
 
@@ -21,19 +24,20 @@ Menu::Menu() {
 
 void Menu::createTrainer(){
 
-    string trainer;
+    string trainerName;
 
     cout << "Trainer name : ";
-    cin >> trainer ;
+    cin >> trainerName ;
     cout << "\n";
 
-    (*this).setTrainer(trainer);  
+    (*this).trainer = Trainer(trainerName);
 
+    // clear input
     cin.ignore();
 
 }
 void Menu::createPokedex(){
-    (*this).pokedex.setpokemonDeck(new Pokemon[1000]); 
+    pokedex.setpokemonDeck(new Pokemon[1000]); 
 }
 
 void Menu::displayMenu(){
@@ -79,9 +83,10 @@ void Menu::displayPokemonList(){
     cout << "\n";
     cout << " - -- -- - POKEMON LIST - -- -- -" << "\n";
     
-    string pokemonName = "Pokemon Name";
-    cout << " > " << pokemonName << "\n";
-
+    for(int i = 0; i < trainer.getpokemonList().size(); i++){   
+        string pokemonName = (*((trainer.getpokemonList())[i])).getName();
+        cout << " > " << pokemonName << "\n";
+    }
     cout << " - -- -- -- -- -- -- -- -- -- -" << "\n";
 
 }
@@ -93,8 +98,10 @@ void Menu::searchCombat(){
 }
 void Menu::healPokemons(){
     
+    // todo 
+    
     cout << "\n";
-    cout << " - -- -- - POKEMON LIST - -- -- -" << "\n";
+    cout << " - -- -- - HEAL POKEMON - -- -- -" << "\n";
     
     string pokemonName = "Pokemon Name";
     int num = 1;
@@ -106,10 +113,10 @@ void Menu::healPokemons(){
  
 // getters & setters
 
-string Menu::getTrainer(){
+Trainer Menu::getTrainer(){
     return trainer;
 };
-void Menu::setTrainer(string _trainer){
+void Menu::setTrainer(Trainer _trainer){
     trainer = _trainer;
 }
 

@@ -1,7 +1,13 @@
+#if defined(__WIN32__)
+#ifndef WINDOWS
+#define WINDOWS
+#endif
+#endif 
 #if !defined(DS_POKE_POKEMON)
 #define DS_POKE_POKEMON
 #include <iostream>
 #include "../lib/x2struct-master/x2struct.hpp"
+typedef unsigned int uint;
 struct PokemonStruct {
     std::string name;
     int hp;

@@ -17,8 +17,6 @@ class Trainer
     
     public:
 
-        int pokemonListPosition;
-
 	    Trainer();
         Trainer(std::string name);
         ~Trainer();

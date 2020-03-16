@@ -6,13 +6,26 @@ typedef unsigned int uint ;
 Pokemon::Pokemon(std::string name):xp(0),hpMax(100),hp(100),level(1),type("normal")
 {
     (*this).setName(name);
+    Attack* newListAttack[] = {0,0,0,0} ;
+    listAttacks=newListAttack;
 }
-Pokemon::Pokemon()
+Pokemon::Pokemon():xp(0),hpMax(100),hp(100),level(1),type("normal"),name("default")
 {
-    (*this).setName("default");
+    Attack* newListAttack[] = {0,0,0,0} ;
+    listAttacks=newListAttack;
 }
 
-Pokemon::~Pokemon(){}
+Attack** Pokemon::getListAttack() const{
+    Attack* newListAttack[4] ;
+    for (size_t i = 0; i < 4; i++)
+    {
+        *(newListAttack[i])=*(listAttacks[i]);
+    }
+    return newListAttack;
+}
+
+Pokemon::~Pokemon(){
+}
 
 std::string Pokemon::getName() const{
     return name;

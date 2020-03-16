@@ -6,6 +6,7 @@
             #define WINDOWS
         #endif
     #endif 
+    #include "Attack.h"
     #include <iostream>
     #include "../lib/x2struct-master/x2struct.hpp"
     typedef unsigned int uint;
@@ -16,6 +17,7 @@
         std::string type;
         uint xp;
         uint level;
+
         PokemonStruct(std::string name,int hp,int hpMax,std::string type,uint xp,uint level):name(name),hp(hp),hpMax(hpMax),type(type),xp(xp),level(level){};
         XTOSTRUCT(O(name,hp,hpMax,type,xp,level));
     };
@@ -25,6 +27,7 @@
         std::string name;
         int hp;
         int hpMax;
+        Attack** listAttacks;
         std::string type;
         uint xp;
         uint level;
@@ -38,6 +41,7 @@
         std::string getType() const;
         uint getXp() const;
         uint getLevel() const;
+        Attack** getListAttack() const;
         void setName(std::string name);
         void setHp(int hp);
         void setHpMax(int hp);

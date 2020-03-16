@@ -14,9 +14,9 @@ using namespace std;
 
 Menu::Menu() {
 
-    Menu::createTrainer();
-    Menu::createPokedex();
-    Menu::displayMenu();
+    (*this).createTrainer();
+    (*this).createPokedex();
+    (*this).displayMenu();
 
 }
 
@@ -30,7 +30,7 @@ void Menu::createTrainer(){
     cin >> trainerName ;
     cout << "\n";
 
-    (*this).trainer = Trainer(trainerName);
+    trainer = Trainer(trainerName);
 
     // clear input
     cin.ignore();
@@ -61,16 +61,16 @@ void Menu::displayMenu(){
     if(choice >= 1 && choice <= 4){
 
         if(choice == 1)
-            displayPokemonList();
+            (*this).displayPokemonList();
         if(choice == 2)
-            managePokemon();
+            (*this).managePokemon();
         if(choice == 3)
-            searchCombat();
+            (*this).searchCombat();
         if(choice == 4)
-            healPokemons();    
+            (*this).healPokemons();    
 
         cin.ignore();
-        Menu::displayMenu();
+        (*this).displayMenu();
 
     }
 

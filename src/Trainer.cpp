@@ -3,23 +3,22 @@
 Trainer::Trainer()
 {
     (*this).setName( "default" );
-    init();
+    (*this).init();
 };
 
 Trainer::Trainer(std::string name)
 {
     (*this).setName( name );
-    init();
+    (*this).init();
 };
 
 Trainer::~Trainer(){
 
     // bye all pokemons ..
-    int size = pokemonListPosition;
+    int size = pokemonList.size();
     for(int i = size-1; i >= 0; i--){
         delete pokemonList[i];
         pokemonList.pop_back();
-        pokemonListPosition--;
     }
 };
 
@@ -27,18 +26,13 @@ Trainer::~Trainer(){
 
 void Trainer::init(){
     pokemonList = vector<Pokemon*>();
-    pokemonListPosition = 0;
     
     // add pokemons for test:
-    Pokemon test1 = Pokemon();
-    test1.setName("test1");
-    Pokemon test2 = Pokemon();
-    test2.setName("test2");
-    std::cout << test1.getName()<< std::endl;
-
-    (*this).addPokemon(&test1);
-    (*this).addPokemon(&test2); 
-    std::cout << (*(*this).getpokemonList()[1]).getName() << std::endl;
+    Pokemon* test1 =new Pokemon("test1");
+    Pokemon* test2 =new Pokemon("test2");
+    (*this).addPokemon(test1);
+    (*this).addPokemon(test2); 
+    std::cout << (*(*this).getpokemonList()[0]).getName() << std::endl;
 
 };
 
@@ -47,7 +41,7 @@ void Trainer::addPokemon(Pokemon* _poke){
 };
 
 void Trainer::removePokemon(Pokemon* _poke){
-    int size = pokemonListPosition;
+    int size = pokemonList.size();
     vector<Pokemon*> newListPokemon = vector<Pokemon*>();
     for(int i = 0; i < size; i++){
         Pokemon* currentPokemon = pokemonList[i];

@@ -17,16 +17,16 @@
     };
     class Attack{
         private:
-            string name;
-            string type;
+            std::string name;
+            std::string type;
             int damage;
         public:
             Attack();
             Attack(string pName,string pType, int pDamage);
             ~Attack();
 
-            string getName();
-            string getType();
+            std::string getName();
+            std::string getType();
             int getDamage();
 
             void setName(string pName);
@@ -35,7 +35,7 @@
 
             void log();
             AttackStruct toStruct();
-            string toString();
+            std::string toString();
     };
 
 #endif // !DS_POKE_ATTACK

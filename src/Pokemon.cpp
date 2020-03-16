@@ -12,9 +12,8 @@ Pokemon::Pokemon()
     (*this).setName("default");
 }
 
-Pokemon::~Pokemon()
-{
-}
+Pokemon::~Pokemon(){}
+
 std::string Pokemon::getName() const{
     return name;
 }

@@ -1,8 +1,15 @@
 
 #include "../include/Pokemon.h"
+
+typedef unsigned int uint ;
+
 Pokemon::Pokemon(std::string name):xp(0),hpMax(100),hp(100),level(1),type("normal")
 {
     (*this).setName(name);
+}
+Pokemon::Pokemon()
+{
+    (*this).setName("default");
 }
 
 Pokemon::~Pokemon()
@@ -44,6 +51,7 @@ void Pokemon::setXp(uint pXp){
 void Pokemon::setLevel(uint pLevel){
     level=pLevel;
 };
+
 PokemonStruct Pokemon::toStruct() const{
     return PokemonStruct(name,hp,hpMax,type,xp,level);
 }

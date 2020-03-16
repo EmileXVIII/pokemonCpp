@@ -1,8 +1,12 @@
 #include <iostream>
-#include "Pokemon.h"
+#include "../include/Menu.h"
+
+using namespace std;
 
 int main(int argc, char *argv[]) {
-	std::cout << "Hello Easy C++ project!" << std::endl;
-	Pokemon testPokemon = Pokemon("Pikachu");
-	std::cout << testPokemon.toString() << std::endl;
+
+	Menu *menu;
+    menu = new Menu();
+
+	cin; // pause
 }

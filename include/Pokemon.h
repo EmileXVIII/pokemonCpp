@@ -15,19 +15,17 @@ public:
     Pokemon(std::string name);
     ~Pokemon();
     std::string getName() const;
-    std::string getHp() const;
-    std::string getHpMax() const;
+    int getHp() const;
+    int getHpMax() const;
     std::string getType() const;
-    std::string getName() const;
-    std::string getXp() const;
-    std::string getLevel() const;
-    void setName();
-    void setHp();
-    void setHpMax();
-    void setType();
-    void setName();
-    void setXp();
-    void setLevel();
+    uint getXp() const;
+    uint getLevel() const;
+    void setName(std::string name);
+    void setHp(int hp);
+    void setHpMax(int hp);
+    void setType(std::string type);
+    void setXp(uint xp);
+    void setLevel(uint level);
 };
 
 #endif // DS_POKE_POKEMON
